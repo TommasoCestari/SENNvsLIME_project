@@ -17,7 +17,7 @@
   "robust_reg": 1e-4,
   "concept_reg": 1,
   "print_freq": 100,
-  "exp_name": "fashion_mnist_lambda1e-4_seed29",
+  "exp_name": "fashion_mnist_lambda1e-4_c5_seed29",
   "dataloader": "fashion_mnist",
   "data_path": "datasets/data/fashion_mnist_data",
   "batch_size" : 200,
