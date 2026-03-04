@@ -1,5 +1,4 @@
 # directories that should not be included in repo.
-checkpoints/
 data/
 random/
 
