@@ -71,7 +71,9 @@ def slic_segmentation(image_tensor):
     img_np = image_tensor.squeeze().cpu().numpy()
     img_np = img_np * FMNIST_STD + FMNIST_MEAN
     img_np = np.clip(img_np, 0, 1)
-    return slic(img_np, n_segments=30, compactness=10, sigma=1, start_label=0)
+    
+    
+    return slic(img_np, n_segments=30, compactness=10, sigma=1, start_label=0, channel_axis=None)
 
 
 def pixel_ablation_confidence_drop(wrapper, images, attributions, pred_labels,
