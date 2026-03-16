@@ -4,8 +4,6 @@ import torch.nn as nn
 from sklearn.neighbors import NearestNeighbors
 from pathlib import Path
 
-MODEL_FILENAME = Path(__file__).resolve().parent / "MNIST_autoencoder_pretrained.pt"
-
 # TODO: Needs Docstrings
 class AutoEncoder(nn.Module):
     def __init__(self):
