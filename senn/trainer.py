@@ -332,7 +332,7 @@ class SENN_Trainer:
         try:
             file_name = path.join(self.checkpoint_dir, file_name)
             print(f"Loading checkpoint...")
-            checkpoint = torch.load(file_name, self.config.device)
+            checkpoint = torch.load(file_name, self.config.device, weights_only=False)
 
             self.current_epoch = checkpoint['epoch']
             self.current_iter = checkpoint['iter']

@@ -2,8 +2,9 @@ import numpy as np
 import torch
 import torch.nn as nn
 from sklearn.neighbors import NearestNeighbors
+from pathlib import Path
 
-MODEL_FILENAME = "./MNIST_autoencoder_pretrained.pt"
+MODEL_FILENAME = Path(__file__).resolve().parent / "MNIST_autoencoder_pretrained.pt"
 
 # TODO: Needs Docstrings
 class AutoEncoder(nn.Module):
