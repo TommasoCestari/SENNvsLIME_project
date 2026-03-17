@@ -41,7 +41,6 @@ def plot_stability_comparison(
     L_hat,
     mean,
     std,
-    use_fixed_class=True # True = class of x_i for both maps
 ):
     model.eval()
     device = next(model.parameters()).device
@@ -63,13 +62,8 @@ def plot_stability_comparison(
         y_logp, (concepts, relevances), _ = model(inputs)
         preds = y_logp.argmax(dim=1)
 
-    # Class selection strategy
-    if use_fixed_class:
-        c_i = preds[0].item()
-        c_j = c_i
-    else:
-        c_i = preds[0].item()
-        c_j = preds[1].item()
+    c_i = preds[0].item()
+    c_j = c_i
 
     # Relevances -> heatmaps (Identity conceptizer: 784 concepts)
     rel_i = relevances[0, :, c_i].view(28, 28).cpu()
